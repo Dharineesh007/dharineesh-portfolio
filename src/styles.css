@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; color-scheme: dark; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #080b12; }
+h1, h2, h3, .font-display { font-family: "Space Grotesk", "DM Sans", sans-serif; }
+::selection { background: rgba(105,168,255,.3); color: white; }
+.grid-overlay {
+  background-image: linear-gradient(rgba(148,163,184,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.045) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+.section-wrap { position: relative; margin: 0 auto; max-width: 80rem; padding: 6rem 1.25rem; }
+.surface-card { border: 1px solid rgba(148,163,184,.13); border-radius: 1.25rem; background: linear-gradient(145deg, rgba(16,22,34,.94), rgba(11,16,25,.92)); }
+@media (min-width: 640px) { .section-wrap { padding: 7rem 2rem; } }
