@@ -150,7 +150,13 @@ function App() {
                 <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_14px_#69a8ff]" />
               </div>
               <div className="my-10 flex justify-center">
-                <div className="flex h-36 w-36 items-center justify-center rounded-full border border-accent/30 bg-gradient-to-br from-blue-500/20 to-cyan-300/5 text-6xl font-semibold text-white shadow-glow">D</div>
+                <div className="relative h-36 w-36 overflow-hidden rounded-full border border-accent/40 bg-gradient-to-br from-blue-500/20 to-cyan-300/5 shadow-glow sm:h-44 sm:w-44">
+                  <img
+                    src="/profile-photo.jpeg"
+                    alt="Dharineesh S S"
+                    className="h-full w-full object-cover object-[50%_34%]"
+                  />
+                </div>
               </div>
               <h3 className="text-center text-2xl font-semibold text-white">{profile.name}</h3>
               <p className="mt-2 text-center text-sm text-slate-400">{profile.role}</p>
@@ -162,7 +168,7 @@ function App() {
               <div className="mt-7 flex justify-center gap-3">
                 {profile.githubUrl && <a aria-label="GitHub" href={profile.githubUrl} target="_blank" rel="noreferrer" className="rounded-xl border border-white/10 p-3 text-slate-400 transition hover:border-accent/40 hover:text-accent"><Github size={18} /></a>}
                 {profile.linkedinUrl && <a aria-label="LinkedIn" href={profile.linkedinUrl} target="_blank" rel="noreferrer" className="rounded-xl border border-white/10 p-3 text-slate-400 transition hover:border-accent/40 hover:text-accent"><Linkedin size={18} /></a>}
-                <a aria-label="Email" href={`mailto:${profile.email}`} className="rounded-xl border border-white/10 p-3 text-slate-400 transition hover:border-accent/40 hover:text-accent"><Mail size={18} /></a>
+                <a aria-label="Email" href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}`} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/10 p-3 text-slate-400 transition hover:border-accent/40 hover:text-accent"><Mail size={18} /></a>
               </div>
             </div>
           </div>
@@ -306,10 +312,10 @@ function App() {
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-accent">Get in touch</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Let's connect.</h2>
             <p className="mx-auto mt-5 max-w-xl leading-7 text-slate-400">Interested in placement and internship opportunities, full-stack development, and collaborative technology projects.</p>
-            <a href={`mailto:${profile.email}`} className="mt-8 inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition hover:bg-blue-300"><Mail size={16} className="mr-2" /> Email me <ArrowUpRight size={16} className="ml-2" /></a>
+            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}`} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition hover:bg-blue-300"><Mail size={16} className="mr-2" /> Email me <ArrowUpRight size={16} className="ml-2" /></a>
             <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-400">
-              <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 hover:text-accent"><Mail size={16} /> {profile.email}</a>
-              <a href={`tel:${profile.phone.replaceAll(" ", "")}`} className="inline-flex items-center gap-2 hover:text-accent"><Phone size={16} /> {profile.phone}</a>
+              <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent"><Mail size={16} /> {profile.email}</a>
+              <a href="https://wa.me/919791809967" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent"><Phone size={16} /> {profile.phone}</a>
               <span className="inline-flex items-center gap-2"><MapPin size={16} /> {profile.location}</span>
             </div>
             {profile.linkedinUrl && (
